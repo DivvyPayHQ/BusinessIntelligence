@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { FlatList, Text } from 'react-native';
 
 export default class Businesses extends React.Component {
