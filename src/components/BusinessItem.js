@@ -1,6 +1,7 @@
 import React from 'react';
 import { get } from 'lodash';
-import { StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text } from 'react-native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 export const PADDING_VERTICAL = 5;
 export const NAME_HEIGHT = 21;
@@ -24,12 +25,18 @@ const stylesheet = StyleSheet.create({
   },
 });
 
-export function BusinessItem({ location, name }) {
+export function BusinessItem({ id, location, name }) {
+  const navigation = useNavigation();
+  const route = useRoute();
+
   return (
-    <View style={stylesheet.container}>
+    <Pressable
+      disabled={route.name === 'BusinessDetail'}
+      onPress={() => navigation.push('BusinessDetail', { id })} style={stylesheet.container}
+    >
       <Text style={stylesheet.name}>{name}</Text>
       <Text style={stylesheet.address}>{get(location, 'address')}, {get(location, 'city')}</Text>
-    </View>
+    </Pressable>
   );
 }
 

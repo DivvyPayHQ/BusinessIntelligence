@@ -18,9 +18,9 @@ const MainNavigator = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <MainNavigator.Navigator>
-        <MainNavigator.Screen name="Companies" component={Businesses} />
-        <MainNavigator.Screen name="Company Profile" component={BusinessDetail} />
+      <MainNavigator.Navigator initialRouteName="Businesses">
+        <MainNavigator.Screen name="Businesses" component={Businesses} />
+        <MainNavigator.Screen name="BusinessDetail" component={BusinessDetail} />
       </MainNavigator.Navigator>
     </NavigationContainer>
   );
