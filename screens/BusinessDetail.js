@@ -6,37 +6,32 @@ import ChartView from '../charts/ChartView.js';
 export default function BusinessDetail(props) {
   const {name, location} = props.route.params;
   const revenue = props.route.params.revenue;
-  console.log(revenue);
 
   function chartData() {
-    var returnArr = [];
-
+    let dataArray = [];
     //sort date past > most recent
-    let rev = revenue.sort(function (a, b) {
+    let sortedRevenue = revenue.sort(function (a, b) {
       return (a.date > b.date) - (a.date < b.date);
     });
 
-    var highDate = 0;
-
-    // create objects that contain x and y values for the char
-    for (let i = 0; i < rev.length; i++) {
-      let dateStr = rev[i].date.replace(/-/g, '/');
-      let date = new Date(dateStr);
+    let recentMonth = 0;
+    //map through and check to return value
+    sortedRevenue.map((rev) => {
+      let date = new Date(rev.date);
       var month = date.getMonth();
 
-      if (month > highDate) {
-        highDate = month;
-      }
-      if (month < highDate) {
+      if (month > recentMonth) {
+        recentMonth = month;
+      } else if (month < recentMonth) {
         month += 12;
       }
-      let val = {
+      let value = {
         x: month,
-        y: rev[i].value,
+        y: rev.value,
       };
-      returnArr.push(val);
-    }
-    return returnArr;
+      dataArray.push(value);
+    });
+    return dataArray;
   }
 
   return (

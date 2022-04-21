@@ -1,15 +1,48 @@
-The `data.json` file contains business data you can use to populate the list and details.
+# BusinessIntelligence
 
-You may need to download Xcode 12.4 for the code to compile. https://developer.apple.com/download/more/
+- a react-native mobile created for a take-home exercise for Divvy.
+- includes businesses, their details, and a chart showing revenue for the past 6 months
 
-If you run into any configuration or build tool issues, feel free to reach out. 
+## Getting Started
 
-#### Some useful links:
-- https://reactnative.dev/docs/getting-started
-- https://reactnative.dev/docs/environment-setup
-- https://reactnative.dev/docs/native-components-ios
-- https://reactnative.dev/docs/native-components-android
-- https://reactnavigation.org/docs/getting-started
-- https://github.com/PhilJay/MPAndroidChart 
-- https://github.com/danielgindi/Charts
-- https://mockaroo.com/ 
+Fork and/or download zip code and open in local IDE
+
+### Prerequisites
+
+- Node.js
+- Watchman
+- Xcode
+- CocoaPods
+
+### Installation
+
+1. Install dependencies
+  ```
+  npm install
+  ```
+2. Open terminal and install CocoaPods
+  ```
+  sudo gem install cocoapods
+  ```
+3. cd to porject/ios
+4. Install pods in project.workspace
+  ```
+  pod install
+  ```
+5. cd back to main project and run start
+  ```
+  npm start
+  ```
+6. Open new terminal and run-ios
+  ```
+  npx react-native run-ios
+  ```
+
+
+## Screens
+
+
+## Sketches
+
+
+
