@@ -8,11 +8,16 @@ export default function BusinessDetail(props) {
   console.log(revenue);
 
   return (
-    <View style={{backgroundColor: '#fff', flex: 1, padding: 24}}>
-      <View style={{backgroundColor: '#fff', width: 45}}>
+    <View style={styles.fullPage}>
+      <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.backButton}
-          onPress={() => props.navigation.navigate('Home')}></TouchableOpacity>
+          onPress={() => props.navigation.navigate('Home')}>
+          <Image
+            source={require('./assets/right-arrow-icon.png')}
+            style={styles.arrow}
+          />
+        </TouchableOpacity>
       </View>
       <View style={styles.container}>
         <View style={styles.chartContainer}>
@@ -27,13 +32,22 @@ export default function BusinessDetail(props) {
             <Text style={styles.revenue}>past 6 months - monthly revenue</Text>
           </View>
         </View>
-        {/* <Image source={require('./assets/me.png')} style={styles.me} /> */}
+        <Image source={require('./assets/me.png')} style={styles.me} />
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  fullPage: {
+    backgroundColor: '#fff',
+    flex: 1,
+    padding: 24,
+  },
+  buttonContainer: {
+    backgroundColor: '#fff',
+    width: 45,
+  },
   container: {
     flex: 1,
     backgroundColor: 'white',

@@ -24,7 +24,7 @@ export default function Businesses({navigation}) {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* <Image source={require('./assets/divvy-blue.png')} style={styles.logo} /> */}
+      <Image source={require('./assets/divvy-blue.png')} style={styles.logo} />
       <Text>
         <FlatList
           data={customData}
