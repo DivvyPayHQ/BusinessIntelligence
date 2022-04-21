@@ -39,10 +39,22 @@ Fork and/or download zip code and open in local IDE
   ```
 
 
+
 ## Screens
+
+<table>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/88463344/164516514-431f3a17-5c6d-4abf-8fa6-88e31b085b3b.png" width="200"  /></td>
+<td><img src="https://user-images.githubusercontent.com/88463344/164517050-cfd5e908-0a4f-4692-b956-d863b3f773ae.png" width="200"  /></td>
+<tr>
+</table>
 
 
 ## Sketches
 
-
-
+<table>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/88463344/164521188-ab8aec2f-671a-48db-9c43-32aca36cc92a.jpg" width="200"  /></td>
+<td><img src="https://user-images.githubusercontent.com/88463344/164521196-930d6e98-cca2-4b7d-9c4d-1ad1ac4c00b1.jpg" width="200"  /></td>
+<tr>
+</table>
