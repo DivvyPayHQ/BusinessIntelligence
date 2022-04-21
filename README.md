@@ -1,6 +1,6 @@
 # BusinessIntelligence
 
-- a react-native mobile created for a take-home exercise for Divvy.
+- a react-native mobile app created for a take-home exercise for Divvy.
 - includes businesses, their details, and a chart showing revenue for the past 6 months
 
 ## Getting Started
