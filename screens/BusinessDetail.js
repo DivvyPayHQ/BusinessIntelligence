@@ -28,7 +28,6 @@ export default function BusinessDetail(props) {
             <Text style={styles.country}>{location.country}</Text>
           </View>
           <View style={styles.chartBox}>
-            {/* <ChartView style={styles.chart} values={chartData(props)} /> */}
             <Text style={styles.revenue}>past 6 months - monthly revenue</Text>
           </View>
         </View>
