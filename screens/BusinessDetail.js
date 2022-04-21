@@ -1,11 +1,43 @@
 import * as React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import ChartView from '../charts/ChartView.js';
 
 export default function BusinessDetail(props) {
   const {name, location} = props.route.params;
   const revenue = props.route.params.revenue;
   console.log(revenue);
+
+  function chartData() {
+    var returnArr = [];
+
+    //sort date past > most recent
+    let rev = revenue.sort(function (a, b) {
+      return (a.date > b.date) - (a.date < b.date);
+    });
+
+    var highDate = 0;
+
+    // create objects that contain x and y values for the char
+    for (let i = 0; i < rev.length; i++) {
+      let dateStr = rev[i].date.replace(/-/g, '/');
+      let date = new Date(dateStr);
+      var month = date.getMonth();
+
+      if (month > highDate) {
+        highDate = month;
+      }
+      if (month < highDate) {
+        month += 12;
+      }
+      let val = {
+        x: month,
+        y: rev[i].value,
+      };
+      returnArr.push(val);
+    }
+    return returnArr;
+  }
 
   return (
     <View style={styles.fullPage}>
@@ -28,6 +60,7 @@ export default function BusinessDetail(props) {
             <Text style={styles.country}>{location.country}</Text>
           </View>
           <View style={styles.chartBox}>
+            <ChartView style={styles.chart} values={chartData(props)} />
             <Text style={styles.revenue}>past 6 months - monthly revenue</Text>
           </View>
         </View>

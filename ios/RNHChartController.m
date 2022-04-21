@@ -58,7 +58,7 @@ RCT_CUSTOM_VIEW_PROPERTY(values, [XYValues], LineChartView) {
   set1.lineWidth = 6.0;
   set1.circleRadius = 8.0;
   set1.drawCircleHoleEnabled = NO;
-  set1.valueFont = [UIFont systemFontOfSize:9.f];
+  set1.valueFont = [UIFont systemFontOfSize:10.f];
   set1.drawValuesEnabled = NO;
   set1.formLineWidth = 5.0;
   set1.formSize = 10.0;
