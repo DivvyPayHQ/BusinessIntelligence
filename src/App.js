@@ -10,8 +10,8 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import 'react-native-gesture-handler';
-import Businesses from './screens/Businesses';
-import BusinessDetail from './screens/BusinessDetail';
+import {Businesses} from './screens/Businesses';
+import {BusinessDetail} from './screens/BusinessDetail';
 
 const MainNavigator = createStackNavigator();
 
