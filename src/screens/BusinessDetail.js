@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { View, Text } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useRoute } from '@react-navigation/native';
 
 
