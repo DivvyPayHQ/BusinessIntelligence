@@ -9,8 +9,7 @@ export const Chip = ({options : {title, active}, onPress}) => {
     )
 }
 
-export const TimeRangeChips = (props) => {
-    const { setTimeRange, defaultChips } = props;
+export const TimeRangeChips = ({setTimeRange, defaultChips}) => {
     const [chips, setChips] = useState(defaultChips);
     const renderChip = (index, chip) => <Chip key={index} onPress={() => onPress(index, chip)} options={chip}/>
     const onPress = (idx) => {
@@ -34,22 +33,26 @@ const styles = StyleSheet.create({
     },
     activePillStyles: {
         borderWidth:1,
-        margin: 5,
+        borderColor: '#0096FF',
+        marginHorizontal: 5,
+        marginVertical: 10,
         alignItems: 'center',
         justifyContent: 'center',
-        width: 70,
-        backgroundColor: 'blue',
+        width: 60,
+        backgroundColor: '#0096FF',
         height: 30,
         borderRadius: 50,
         paddingRight: 5,
     },
     inactivePillStyles: {
         borderWidth:1,
-        margin: 5,
+        borderColor: 'lightgray',
+        marginVertical: 10,
+        marginHorizontal: 5,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'white',
-        width: 70,
+        backgroundColor: 'lightgray',
+        width: 60,
         height: 30,
         borderRadius: 50,
         paddingRight: 5,
