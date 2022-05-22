@@ -20,7 +20,7 @@ const App = () => {
     <NavigationContainer>
       <MainNavigator.Navigator>
         <MainNavigator.Screen name="Home" component={Businesses} />
-        <MainNavigator.Screen name="Profile" component={BusinessDetail} />
+        <MainNavigator.Screen name="BusinessDetails" component={BusinessDetail} />
       </MainNavigator.Navigator>
     </NavigationContainer>
   );

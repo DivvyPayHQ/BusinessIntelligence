@@ -19,42 +19,38 @@ export const TimeRangeChips = ({setTimeRange, defaultChips}) => {
         setTimeRange(idx);
     };
     return (
-        <View style={{flexDirection: 'row'}}>
+        <View style={{flexDirection: 'row', paddingLeft: 10}}>
             {chips.map((chip, index) => renderChip(index, chip))}
         </View>);
 };
 
 const styles = StyleSheet.create({
     activeTextStyles: {
-        color: 'white',
+        color: 'seagreen',
+        fontWeight: '700',
     },
     inactiveTextStyles: {
-        color: 'black'
+        color: 'gray',
+        fontWeight: '700',
     },
     activePillStyles: {
-        borderWidth:1,
-        borderColor: '#0096FF',
+        borderBottomWidth:2,
+        borderColor: 'seagreen',
         marginHorizontal: 5,
         marginVertical: 10,
         alignItems: 'center',
         justifyContent: 'center',
-        width: 60,
-        backgroundColor: '#0096FF',
+        width: 50,
         height: 30,
-        borderRadius: 50,
         paddingRight: 5,
     },
     inactivePillStyles: {
-        borderWidth:1,
-        borderColor: 'lightgray',
         marginVertical: 10,
         marginHorizontal: 5,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'lightgray',
-        width: 60,
+        width: 50,
         height: 30,
-        borderRadius: 50,
         paddingRight: 5,
     },
 });
