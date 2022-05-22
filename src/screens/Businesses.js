@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { TimeRangeChips } from '../components/TimeRangeChips';
 import { SortableHeader } from '../components/SortableHeader';
+import BarChartModule from '../components/BarChart';
 import { getRevenue, sortArray, mapDataPerTimeRange } from '../Transforms';
 import { getBusinessData } from '../Services';
 import { styles } from './styles/BusinessesStyles';
@@ -85,7 +86,8 @@ export const Businesses = () => {
           // {{opacity:0.5}} style={{width: '100%', height: '100%'}} source={require('../assets/cityscapeBackground.jpg')} resizeMode='cover'>
         <View style={styles.container}>
           <View style={styles.graphContainer}>
-            <Text>A graph will go here</Text>
+            {/* <Text>A graph will go here</Text> */}
+          <BarChartModule />
           </View>
           <TimeRangeChips setTimeRange={setTimeRange} defaultChips={defaultChips}/>
           <FlatList
