@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { TimeRangeChips } from '../components/TimeRangeChips';
 import { SortableHeader } from '../components/SortableHeader';
-import { BarChart, LineChart } from '../components/Charts';
+import { BarChart } from '../components/Charts';
 import { getRevenue, sortArray, mapDataPerTimeRange } from '../Transforms';
 import { getBusinessData } from '../Services';
 import { styles } from './styles/BusinessesStyles';

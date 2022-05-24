@@ -45,7 +45,7 @@ export const BusinessDetail = () => {
         <View style={styles.graphContainer}>
           <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 5}}>
             <Text style={styles.graphTitle}>6 Month Trend (Millions)</Text>
-            <View style={{backgroundColor: 'white', padding: 3, borderWidth: 1, borderColor: 'lightgray', borderRadius: 7}}>
+            <View style={{backgroundColor: 'white', padding: 5, borderWidth: 1, borderColor: 'lightgray', borderRadius: 7}}>
               <Text style={styles.locationText}>{company.name}</Text>
               <Text style={styles.locationText}>{company.location.address}</Text>
               <Text style={styles.locationText}>{company.location.city}, {company.location.country}</Text>

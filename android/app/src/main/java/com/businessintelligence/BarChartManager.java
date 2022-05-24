@@ -32,7 +32,7 @@ public class BarChartManager extends SimpleViewManager<BarChart> {
         chart.getDescription().setEnabled(false);
         chart.setDrawGridBackground(false); // shows a color background to chart
         chart.setDrawBarShadow(false); // sets the top of the bar to gray
-        chart.animateY(1500, Easing.EaseInBounce); // animates from bottom up
+//        chart.animateY(1500, Easing.EaseInBounce); // animates from bottom up
 
         chart.invalidate(); //refresh the data
          return chart;
