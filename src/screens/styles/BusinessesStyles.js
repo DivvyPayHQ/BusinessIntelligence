@@ -3,14 +3,27 @@ import { StyleSheet } from 'react-native';
 // used for both business screen and drilldown
 export const styles = StyleSheet.create({
     container: {
+      backgroundColor: 'white',
       flex: 1,
       backgroundColor: 'white',
       justifyContent: 'center',
       alignContent: 'center',
     },
     graphContainer: {
-      height: 250,
+      height: 300,
       width: '100%',
+      padding: 15,
+    },
+    graph: {
+        flex: 1,
+        width: '100%',
+    },
+    graphTitle: {
+        paddingLeft: 10,
+        alignSelf: 'flex-start',
+        fontWeight: '700',
+        fontSize: 16,
+        padding: 10,
     },
     businessHeader: {
       flex: 1,
@@ -20,6 +33,12 @@ export const styles = StyleSheet.create({
       borderTopColor: 'lightgray',
       backgroundColor: 'white',
       flexDirection: 'row',
+    },
+    revenueContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      flex: 1,
+      justifyContent: 'space-between',
     },
     row: {
       padding: 22,
@@ -60,5 +79,11 @@ export const styles = StyleSheet.create({
         height: '100%',
         width: 1,
         backgroundColor: 'gray'
+    },
+    locationText: {
+      justifyContent: 'flex-end',
+      paddingLeft: 10,
+      fontSize: 12,
+      color: 'black',
     },
   });

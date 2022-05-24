@@ -4,20 +4,21 @@ import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { TimeRangeChips } from '../components/TimeRangeChips';
 import { SortableHeader } from '../components/SortableHeader';
-import BarChartModule from '../components/BarChart';
+import { BarChart, LineChart } from '../components/Charts';
 import { getRevenue, sortArray, mapDataPerTimeRange } from '../Transforms';
 import { getBusinessData } from '../Services';
 import { styles } from './styles/BusinessesStyles';
+const ONE_MILLION = 1000000;
 
 const BusinessRow = ({item, navigation, index, data}) => {
-  const isAlt = index % 2 > 0; // Used for alternating color in table
+  const isAltStyle = index % 2 > 0; // Used for alternating color in table
   const originalItem = data.find(a => a.id === item.id) // Map the passed item to item in original data (So we dont pass sliced revenue)
   const onPress = () => navigation.navigate('BusinessDetails', {company: originalItem});
   const revenue = getRevenue(item?.revenue).formatted;
   return ( 
-    <TouchableOpacity onPress={onPress} style={[styles.row, isAlt ? styles.alt : styles.notAlt]}>
+    <TouchableOpacity onPress={onPress} style={[styles.row, isAltStyle ? styles.alt : styles.notAlt]}>
       <Text style={styles.companyText}>{item.name}</Text>
-      <View style={{flexDirection: 'row', alignItems: 'center', flex: 1, justifyContent: 'space-between'}}>
+      <View style={styles.revenueContainer}>
         <Text style={styles.revenueText}>{revenue}</Text>
         <Icon name='chevron-right'/>
       </View>
@@ -35,6 +36,7 @@ export const Businesses = () => {
   const [timeRange, setTimeRange] = useState(2); //1 mo = 0, 3 mo = 1, 6 mo = 2
   const [isAscending, setIsAscending] = useState();
   const [sortColumn, setSortColumn] = useState('Company');
+  const [graphConfig, setGraphConfig] = useState({xAxis: [], yAxis: []});
 
   const navigation = useNavigation();
 
@@ -50,9 +52,16 @@ export const Businesses = () => {
     });
   }, []);
 
+  // Listen to changes in display data and re render bar graph
+  useEffect(() => {
+      const xAxis = displayData.slice(0,7).map(company => company.name); // grab the first 5 only to display
+      const yAxis = displayData.slice(0,7).map(company => company.totalRevenue/ONE_MILLION);
+      setGraphConfig({xAxis, yAxis}); // setting the graph data
+  }, [displayData]);
+
   // Sort based on column
   useEffect(() => {
-    setDisplayData(sortArray(displayData, sortColumn, isAscending));
+    setDisplayData([...sortArray(displayData, sortColumn, isAscending)]);
   }, [isAscending]);
 
    // Set time range data and maintain sort
@@ -86,8 +95,8 @@ export const Businesses = () => {
           // {{opacity:0.5}} style={{width: '100%', height: '100%'}} source={require('../assets/cityscapeBackground.jpg')} resizeMode='cover'>
         <View style={styles.container}>
           <View style={styles.graphContainer}>
-            {/* <Text>A graph will go here</Text> */}
-          <BarChartModule />
+            <Text style={styles.graphTitle}>Top 7 Companies (Million)</Text>
+            <BarChart yAxis={graphConfig.yAxis} xAxis={graphConfig.xAxis} style={styles.graph}/>
           </View>
           <TimeRangeChips setTimeRange={setTimeRange} defaultChips={defaultChips}/>
           <FlatList

@@ -3634,11 +3634,6 @@
     "has" "^1.0.3"
     "side-channel" "^1.0.4"
 
-"intl@^1.2.5":
-  "integrity" "sha1-giRKIZDE5Bn4Nx9ao02qNCDiq94="
-  "resolved" "https://registry.npmjs.org/intl/-/intl-1.2.5.tgz"
-  "version" "1.2.5"
-
 "invariant@^2.2.4":
   "integrity" "sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA=="
   "resolved" "https://registry.npmjs.org/invariant/-/invariant-2.2.4.tgz"
@@ -4685,17 +4680,12 @@
   "resolved" "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz"
   "version" "4.0.8"
 
-"lodash.sortby@^4.7.0":
-  "integrity" "sha1-7dFMgk4sycHgsKG0K7UhBRakJDg="
-  "resolved" "https://registry.npmjs.org/lodash.sortby/-/lodash.sortby-4.7.0.tgz"
-  "version" "4.7.0"
-
 "lodash.throttle@^4.1.1":
   "integrity" "sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ="
   "resolved" "https://registry.npmjs.org/lodash.throttle/-/lodash.throttle-4.1.1.tgz"
   "version" "4.1.1"
 
-"lodash@^4.17.10", "lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.19", "lodash@^4.17.20", "lodash@^4.3.0":
+"lodash@^4.17.10", "lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.19", "lodash@^4.17.20", "lodash@^4.3.0", "lodash@^4.7.0":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
   "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   "version" "4.17.21"
@@ -5314,6 +5304,11 @@
   "resolved" "https://registry.npmjs.org/nullthrows/-/nullthrows-1.1.1.tgz"
   "version" "1.1.1"
 
+"numeral@^2.0.6":
+  "integrity" "sha1-StCAk21EPCVhrtnyGX7//iX05QY="
+  "resolved" "https://registry.npmjs.org/numeral/-/numeral-2.0.6.tgz"
+  "version" "2.0.6"
+
 "nwsapi@^2.2.0":
   "integrity" "sha512-h2AatdwYH+JHiZpv7pt/gSX1XoRGb7L/qSIeuqA6GwYoF9w1vP1cw42TO0aI2pNyshRK5893hNSl+1//vHK7hQ=="
   "resolved" "https://registry.npmjs.org/nwsapi/-/nwsapi-2.2.0.tgz"
@@ -5839,6 +5834,11 @@
     "hoist-non-react-statics" "^3.3.0"
     "invariant" "^2.2.4"
     "prop-types" "^15.7.2"
+
+"react-native-global-props@^1.1.5":
+  "integrity" "sha512-QDeAdRel6zyJfbgyFxZi9QXZe78OdlANxJae0rJn76uTqdt/A+iWBVjJy3NmaN/fpKy0uV0HhW6Hu4xM0QCisQ=="
+  "resolved" "https://registry.npmjs.org/react-native-global-props/-/react-native-global-props-1.1.5.tgz"
+  "version" "1.1.5"
 
 "react-native-iphone-x-helper@^1.3.0":
   "integrity" "sha512-HOf0jzRnq2/aFUcdCJ9w9JGzN3gdEg0zFE4FyYlp4jtidqU03D5X7ZegGKfT1EWteR0gPBGp9ye5T5FvSWi9Yg=="
@@ -6956,10 +6956,10 @@
     "psl" "^1.1.28"
     "punycode" "^2.1.1"
 
-"tr46@^2.0.2":
-  "integrity" "sha512-3n1qG+/5kg+jrbTzwAykB5yRYtQCTqOGKq5U5PE3b0a1/mzo6snDhjGS0zJVJunO0NrT3Dg1MLy5TjWP/UJppg=="
-  "resolved" "https://registry.npmjs.org/tr46/-/tr46-2.0.2.tgz"
-  "version" "2.0.2"
+"tr46@^2.1.0":
+  "integrity" "sha512-15Ih7phfcdP5YxqiB+iDtLoaTz4Nd35+IiAv0kQ5FNKHzXgdWqPoTIqEDDJmXceQt4JZk6lVPT8lnDlPpGDppw=="
+  "resolved" "https://registry.npmjs.org/tr46/-/tr46-2.1.0.tgz"
+  "version" "2.1.0"
   dependencies:
     "punycode" "^2.1.1"
 
@@ -7276,12 +7276,12 @@
     "webidl-conversions" "^3.0.0"
 
 "whatwg-url@^8.0.0":
-  "integrity" "sha512-vwTUFf6V4zhcPkWp/4CQPr1TW9Ml6SF4lVyaIMBdJw5i6qUUJ1QWM4Z6YYVkfka0OUIzVo/0aNtGVGk256IKWw=="
-  "resolved" "https://registry.npmjs.org/whatwg-url/-/whatwg-url-8.4.0.tgz"
-  "version" "8.4.0"
+  "integrity" "sha512-gAojqb/m9Q8a5IV96E3fHJM70AzCkgt4uXYX2O7EmuyOnLrViCQlsEBmF9UQIu3/aeAIp2U17rtbpZWNntQqdg=="
+  "resolved" "https://registry.npmjs.org/whatwg-url/-/whatwg-url-8.7.0.tgz"
+  "version" "8.7.0"
   dependencies:
-    "lodash.sortby" "^4.7.0"
-    "tr46" "^2.0.2"
+    "lodash" "^4.7.0"
+    "tr46" "^2.1.0"
     "webidl-conversions" "^6.1.0"
 
 "which-boxed-primitive@^1.0.1":
@@ -7433,9 +7433,9 @@
   "version" "4.0.2"
 
 "y18n@^4.0.0":
-  "integrity" "sha512-wNcy4NvjMYL8gogWWYAO7ZFWFfHcbdbE57tZO8e4cbpj8tfUcwrwqSl3ad8HxpYWCdXcJUCeKKZS62Av1affwQ=="
-  "resolved" "https://registry.npmjs.org/y18n/-/y18n-4.0.1.tgz"
-  "version" "4.0.1"
+  "integrity" "sha512-JKhqTOwSrqNA1NY5lSztJ1GrBiUodLMmIZuLiDaMRJ+itFd+ABVE8XBjOvIWL+rSqNDC74LCSFmlb/U4UZ4hJQ=="
+  "resolved" "https://registry.npmjs.org/y18n/-/y18n-4.0.3.tgz"
+  "version" "4.0.3"
 
 "y18n@^5.0.5":
   "integrity" "sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA=="

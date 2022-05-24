@@ -2,15 +2,14 @@ import React, {useEffect, useState} from 'react';
 import { View, Text, FlatList } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import { styles } from './styles/BusinessesStyles';
-import { bigCurrencyFormatter } from '../Transforms';
+import { bigCurrencyFormatter, getLineChartData, formatDate } from '../Transforms';
+import { LineChart } from '../components/Charts';
 import { useNavigation } from '@react-navigation/native';
-import moment from 'moment';
 
 const RevenueRow = ({item, index}) => {
-  console.log(item)
   const isAlt = index % 2 > 0;
-  const revenue = bigCurrencyFormatter(item?.value);
-  const formattedMonth = moment(item.date, 'yyyy-MM-dd HH:mm:ss').format('MMM YY');
+  const revenue = bigCurrencyFormatter(item?.value); // makes the revenue value formatted
+  const formattedMonth = formatDate(item?.date); // creates date column value
   return (
     <View style={[styles.row, isAlt ? styles.alt : styles.notAlt]}>
       <Text style={styles.companyText}>{formattedMonth}</Text>
@@ -22,10 +21,13 @@ const RevenueRow = ({item, index}) => {
 export const BusinessDetail = () => {
   const {params: {company}} = useRoute();
   const {setOptions} = useNavigation(); // used to set company name to header
+  const [graphConfig, setGraphConfig] = useState({xAxis: [], yAxis: []});
+
   useEffect(() => {
     setOptions({
       title: company?.name
     });
+    setGraphConfig(getLineChartData(company));
   }, []);
 
   const renderItem = ({item, index}) => <RevenueRow item={item} index={index}/>;
@@ -41,10 +43,18 @@ export const BusinessDetail = () => {
   return (
       <View style={styles.container}>
         <View style={styles.graphContainer}>
-          <Text>A graph will go here</Text>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 5}}>
+            <Text style={styles.graphTitle}>6 Month Trend (Millions)</Text>
+            <View style={{backgroundColor: 'white', padding: 3, borderWidth: 1, borderColor: 'lightgray', borderRadius: 7}}>
+              <Text style={styles.locationText}>{company.name}</Text>
+              <Text style={styles.locationText}>{company.location.address}</Text>
+              <Text style={styles.locationText}>{company.location.city}, {company.location.country}</Text>
+            </View>
+          </View>
+          <LineChart style={styles.graph} xAxis={graphConfig.xAxis} yAxis={graphConfig.yAxis} />
         </View>
          <FlatList
-            data={company.revenue.reverse()} 
+            data={company.revenue.reverse()} // oldest to newest direction
             ListHeaderComponent={renderBusinessHeader}
             stickyHeaderIndices={[0]}
             renderItem={renderItem}
