@@ -12,6 +12,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import 'react-native-gesture-handler';
 import {Businesses} from './screens/Businesses';
 import {BusinessDetail} from './screens/BusinessDetail';
+import { LandingScreen } from './screens/Landing';
 
 const MainNavigator = createStackNavigator();
 
@@ -19,7 +20,8 @@ const App = () => {
   return (
     <NavigationContainer>
       <MainNavigator.Navigator>
-        <MainNavigator.Screen name="Home" component={Businesses} />
+        <MainNavigator.Screen name="Home" component={LandingScreen} />
+        <MainNavigator.Screen name="Businesses" component={Businesses} />
         <MainNavigator.Screen name="BusinessDetails" component={BusinessDetail} />
       </MainNavigator.Navigator>
     </NavigationContainer>

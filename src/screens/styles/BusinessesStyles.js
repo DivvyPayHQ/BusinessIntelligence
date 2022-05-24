@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
       alignContent: 'center',
     },
     graphContainer: {
-      height: 300,
+      height: 250,
       width: '100%',
       padding: 15,
     },

@@ -54,7 +54,7 @@ export const Businesses = () => {
 
   // Listen to changes in display data and re render bar graph
   useEffect(() => {
-      const xAxis = displayData.slice(0,7).map(company => company.name); // grab the first 5 only to display
+      const xAxis = displayData.slice(0,7).map(company => company.name); // grab the first 7 only to display
       const yAxis = displayData.slice(0,7).map(company => company.totalRevenue/ONE_MILLION);
       setGraphConfig({xAxis, yAxis}); // setting the graph data
   }, [displayData]);
@@ -92,7 +92,6 @@ export const Businesses = () => {
   };
   if (displayData.length) { 
     return (
-          // {{opacity:0.5}} style={{width: '100%', height: '100%'}} source={require('../assets/cityscapeBackground.jpg')} resizeMode='cover'>
         <View style={styles.container}>
           <View style={styles.graphContainer}>
             <Text style={styles.graphTitle}>Top 7 Companies (Million)</Text>

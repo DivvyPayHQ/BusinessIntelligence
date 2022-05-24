@@ -32,7 +32,7 @@ public class BarChartManager extends SimpleViewManager<BarChart> {
         chart.getDescription().setEnabled(false);
         chart.setDrawGridBackground(false); // shows a color background to chart
         chart.setDrawBarShadow(false); // sets the top of the bar to gray
-        chart.animateY(500, Easing.EaseInBounce); // animates from bottom up
+        chart.animateY(1500, Easing.EaseInBounce); // animates from bottom up
 
         chart.invalidate(); //refresh the data
          return chart;
@@ -90,6 +90,7 @@ public class BarChartManager extends SimpleViewManager<BarChart> {
             data.setValueTextSize(12f);
             chart.setTouchEnabled(false);
             chart.setData(data);
+            chart.animateY(1000, Easing.EaseOutBack);
             chart.invalidate();
         };
 }
