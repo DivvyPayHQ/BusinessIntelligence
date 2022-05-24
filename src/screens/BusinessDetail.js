@@ -45,10 +45,10 @@ export const BusinessDetail = () => {
         <View style={styles.graphContainer}>
           <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 5}}>
             <Text style={styles.graphTitle}>6 Month Trend (Millions)</Text>
-            <View style={{backgroundColor: 'white', padding: 5, borderWidth: 1, borderColor: 'lightgray', borderRadius: 7}}>
-              <Text style={styles.locationText}>{company.name}</Text>
-              <Text style={styles.locationText}>{company.location.address}</Text>
-              <Text style={styles.locationText}>{company.location.city}, {company.location.country}</Text>
+            <View style={{width: 150, backgroundColor: 'white', padding: 5, borderWidth: 1, borderColor: 'lightgray', borderRadius: 7}}>
+              <Text style={styles.locationText} numberOfLines={1}>{company.name}</Text>
+              <Text style={styles.locationText} numberOfLines={1}>{company.location.address} </Text>
+              <Text style={styles.locationText} numberOfLines={1}>{company.location.city}, {company.location.country}</Text>
             </View>
           </View>
           <LineChart style={styles.graph} xAxis={graphConfig.xAxis} yAxis={graphConfig.yAxis} />

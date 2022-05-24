@@ -94,7 +94,7 @@ export const Businesses = () => {
     return (
         <View style={styles.container}>
           <View style={styles.graphContainer}>
-            <Text style={styles.graphTitle}>Top 7 Companies (Million)</Text>
+            <Text style={styles.graphTitle}>Top 7 Companies (Millions)</Text>
             <BarChart yAxis={graphConfig.yAxis} xAxis={graphConfig.xAxis} style={styles.graph}/>
           </View>
           <TimeRangeChips setTimeRange={setTimeRange} defaultChips={defaultChips}/>

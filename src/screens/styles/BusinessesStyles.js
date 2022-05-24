@@ -84,6 +84,6 @@ export const styles = StyleSheet.create({
       justifyContent: 'flex-end',
       paddingLeft: 10,
       fontSize: 12,
-      color: 'black',
+      color: 'black'
     },
   });
