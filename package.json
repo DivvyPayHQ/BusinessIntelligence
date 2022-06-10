@@ -13,6 +13,7 @@
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/native": "^5.9.8",
     "@react-navigation/stack": "^5.14.3",
+    "espree": "^7.3.1",
     "moment": "^2.29.3",
     "numeral": "^2.0.6",
     "react": "16.13.1",
@@ -26,11 +27,13 @@
   "devDependencies": {
     "@babel/core": "^7.13.8",
     "@babel/runtime": "^7.13.9",
-    "@react-native-community/eslint-config": "^2.0.0",
-    "babel-jest": "^26.6.3",
-    "eslint": "^7.21.0",
+    "eslint": "^8.16.0",
+    "eslint-plugin-react": "^7.30.0",
+    "install": "0.13.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.65.2",
+    "npm": "8.11.0",
+    "prettier": "2.6.2",
     "react-test-renderer": "16.13.1"
   },
   "jest": {
